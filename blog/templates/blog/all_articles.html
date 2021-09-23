@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="card">
+{% for i in obj %}
+{#    {% if i.status == 'publish' %}#}
+    <div class="card-body">
+
+        <a href="{{ i.get_absolute_url }}">{{ i.title }}</a>
+
+    </div>
+{#        {% endif %}#}
+
+    {% endfor %}
+    </div>
+{% endblock content %}

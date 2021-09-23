@@ -36,7 +36,7 @@ def user_register(request):
         form = UserRegistrationForm(request.POST)
         if form.is_valid():
             username = form.cleaned_data['username']
-            password = form.cleaned_data['password']
+            password = form.cleaned_data['password1']
             email = form.cleaned_data['email']
             User.objects.create_user(username=username, password=password, email=email)
             messages.success(request, 'ثبت نام موفقیت آمیز بود!', 'success')

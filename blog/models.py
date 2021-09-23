@@ -11,11 +11,11 @@ class PublishArticleManager(models.Manager):
 
 class Article(models.Model):
     STATUS = (
-        ('draft', 'Draft'),
-        ('publish', 'Publish'),
+        ('draft', 'پیش نویس'),
+        ('publish', 'متتشرشده'),
     )
     title = models.CharField(max_length=120)
-    slug = models.SlugField(max_length=120, unique=True)
+    slug = models.SlugField(max_length=120, unique=True, allow_unicode=True)
     writer = models.ForeignKey(User, on_delete=models.CASCADE)
     body = models.TextField()
     publish = models.DateTimeField(default=timezone.now)

@@ -1,15 +1,18 @@
 {% extends 'base.html' %}
-
+{% load static %}
+{% block custom_tags %}
+    <link rel="stylesheet" href={% static "blog/css/style.css" %}>
+{% endblock custom_tags %}
 {% block content %}
     <div class="card">
 {% for i in obj %}
-{#    {% if i.status == 'publish' %}#}
+
     <div class="card-body">
 
         <a href="{{ i.get_absolute_url }}">{{ i.title }}</a>
 
     </div>
-{#        {% endif %}#}
+
 
     {% endfor %}
     </div>

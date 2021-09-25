@@ -4,5 +4,5 @@
 <h3>{{ article.title }}</h3>
     <small>{{ article.publish}}</small>
     <hr>
-     <p>{{ article.body }}</p>
+     <p>{{ article.body|safe }}</p>
 {% endblock %}

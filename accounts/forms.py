@@ -43,6 +43,10 @@ class UserRegistrationForm(forms.Form):
         user = User.objects.filter(email=email)
         if user.exists():
             raise forms.ValidationError("ایمیل تکراری میباشد!")
+        user = cleaned_data.get('username')
+        user = User.objects.filter(username=user)
+        if user.exists():
+            raise forms.ValidationError("یوزرنیم تکراری میباشد!")
 
 
 
